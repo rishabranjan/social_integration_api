@@ -15,6 +15,11 @@ import java.util.Map;
 @AllArgsConstructor
 public class LeetcodeController {
 
+    @GetMapping("/")
+    public String getLeetcode() {
+        return "Welcome to Leetcode API";
+    }
+
     @GetMapping("/geUserProfile")
     public JsonNode getUsers(@RequestParam String userName) {
 
