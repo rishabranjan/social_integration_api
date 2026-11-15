@@ -15,12 +15,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class LeetcodeController {
 
-    @GetMapping("/")
-    public String getLeetcode() {
-        return "Welcome to Leetcode API";
-    }
-
-    @GetMapping("/geUserProfile")
+    @GetMapping("/getUserProfile")
     public JsonNode getUsers(@RequestParam String userName) {
 
         String query = """
@@ -63,5 +58,10 @@ public class LeetcodeController {
                 .body(Map.of("query", query, "variables", Map.of("username", userName)))
                 .retrieve()
                 .body(JsonNode.class);
+    }
+
+    @GetMapping("")
+    public String getLeetcode() {
+        return "Welcome to Leetcode API";
     }
 }
