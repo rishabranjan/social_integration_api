@@ -1,6 +1,7 @@
 package io.github.rishabranjan.social_integration_api.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/leetcode")
+@CrossOrigin(origins = {"http://localhost:3000", "https://rishabranjan.github.io"})
 @AllArgsConstructor
 public class LeetcodeController {
 
